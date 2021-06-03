@@ -1,0 +1,44 @@
+<?php
+include_once('connect1.php');
+// require 'connect1.php';
+$query = "select * from parrots";
+$result = mysql_query($query);
+?>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>
+        <head>Test</head>
+    </title>
+</head>
+<body>
+    <table align="center" border="1px" style="width:300px; line-height: 30px;"> 
+        <tr>
+            <th>Parrots</th>
+        </tr>
+        <t>
+           <th><h1>Name</h1></th> 
+           <th><h1>Species</h1></th> 
+           <th><h1>Age</h1></th> 
+        </t>
+    <?php
+        while($row = mysql_fetch_accoc($result)){
+    ?>        
+        <tr>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['species']; ?></td>
+            <td><?php echo $row['age']; ?></td>
+        </tr>   
+    <?php  
+        }
+    ?>
+    </table>
+
+<html>
+</body>
+</html>
