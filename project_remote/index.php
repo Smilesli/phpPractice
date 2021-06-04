@@ -10,16 +10,15 @@ require_once 'includes/database.php';
 </head>
 <body>
 <?php
-$sql = "SELECT * FROM parrots1";
+$sql = "SELECT * FROM sg_map";
 $result = mysqli_query($conn,$sql);
 $rowCount = mysqli_num_rows($result);
 
 if ($rowCount>0){
     while($row = mysqli_fetch_assoc($result)){
-        echo $row['name']."<br>";
-        echo $row['species']."<br>";
-        echo $row['age']."<br>";
-    }
+        echo $row['apm']."<br>";
+        echo $row['sg']."<br>";
+     }
 }
 
 else {
