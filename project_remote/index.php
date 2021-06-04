@@ -10,14 +10,14 @@ require_once 'includes/database.php';
 </head>
 <body>
 <?php
-$sql = "SELECT * FROM sg_map";
+$sql = "SELECT `sg` FROM sg_map";
 $result = mysqli_query($conn,$sql);
 $rowCount = mysqli_num_rows($result);
 
 if ($rowCount>0){
     while($row = mysqli_fetch_assoc($result)){
-        echo $row['apm']."<br>";
         echo $row['sg']."<br>";
+        // echo $row['sg']."<br>";
      }
 }
 
