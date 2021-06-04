@@ -10,14 +10,21 @@ require_once 'includes/database.php';
 </head>
 <body>
 <?php
-$sql = "SELECT `sg` FROM sg_map";
-$result = mysqli_query($conn,$sql);
+$sql = "SELECT name FROM packages";
+
+$sql_sam = "SELECT Package FROM cost_recovery";
+
+// $sql = "SELECT sam.cost_recovery.Package, apm.packages.name FROM sam.cost_recovery join apm.packages on sam.cost_recovery.`App ID` = apm.packages.app_id";
+// $result = mysqli_query($conn_apm, $sql);
+
+$result = mysqli_query($conn_sam, $sql_sam);
 $rowCount = mysqli_num_rows($result);
 
 if ($rowCount>0){
     while($row = mysqli_fetch_assoc($result)){
-        echo $row['sg']."<br>";
-        // echo $row['sg']."<br>";
+        echo $row['Package']."<br>";
+        // echo $row['name']."<br>";
+    
      }
 }
 

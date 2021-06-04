@@ -10,14 +10,14 @@ $conn_apm = mysqli_connect($dbHost,$dbUser,$dbPass,$dbName_apm);
 $conn_sam = mysqli_connect($dbHost,$dbUser,$dbPass,$dbName_sam);
 
 if($conn_apm) {   
-    mysql_select_db($dbName_apm,$conn_apm)
+    // mysql_select_db($dbName_apm,$conn_apm);
 }
 else{
     die("Database connection failed");
 }
 
 if($conn_sam) {   
-    mysql_select_db($dbName_sam,$conn_sam)
+    // mysql_select_db($dbName_sam,$conn_sam);
 }
 else{
     die("Database connection failed");
